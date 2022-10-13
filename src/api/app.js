@@ -4,7 +4,11 @@ import helmet from "helmet";
 import cors from "cors";
 import morgan from "morgan";
 
+import { checkToken } from "./middlewares/check-token.js";
+
 import { AuthRouter } from "./routers/auth/auth.router.js";
+import { NoteRouter } from "./routers/note/note.router.js";
+
 
 const app = express();
 
@@ -27,6 +31,8 @@ app.use(express.static(__dirname + "/src/public"));
 
 // Routes
 app.use("/api/auth", AuthRouter);
+app.use("/api/note", checkToken, NoteRouter);
+
 app.get("/", (_, res) => res.statusCode(200).send("Hello There!"));
 
 export { app };

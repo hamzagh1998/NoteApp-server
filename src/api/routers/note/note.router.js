@@ -2,6 +2,7 @@ import { Router } from "express";
 
 import { NoteController } from "./note.controller.js";
 
+
 const NoteRouter = Router();
 
 NoteRouter.get("/", NoteController.getAllNotes);

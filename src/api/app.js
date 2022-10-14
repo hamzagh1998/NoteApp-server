@@ -8,6 +8,7 @@ import { checkToken } from "./middlewares/check-token.js";
 
 import { AuthRouter } from "./routers/auth/auth.router.js";
 import { NoteRouter } from "./routers/note/note.router.js";
+import { checklistRouter } from "./routers/checklist/checklist.router.js";
 
 
 const app = express();
@@ -32,6 +33,7 @@ app.use(express.static(__dirname + "/src/public"));
 // Routes
 app.use("/api/auth", AuthRouter);
 app.use("/api/note", checkToken, NoteRouter);
+app.use("/api/checklist", checkToken, checklistRouter);
 
 app.get("/", (_, res) => res.statusCode(200).send("Hello There!"));
 

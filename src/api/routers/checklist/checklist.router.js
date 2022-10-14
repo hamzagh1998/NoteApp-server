@@ -3,12 +3,12 @@ import { Router } from "express";
 import { ChecklistController } from "./checklist.controller.js";
 
 
-const checklistRouter = Router();
+const ChecklistRouter = Router();
 
-checklistRouter.get("/", ChecklistController.getAllChecklists);
-checklistRouter.get("/:id", ChecklistController.getChecklistDetail);
-checklistRouter.post("/", ChecklistController.createChecklist);
-checklistRouter.put("/:id", ChecklistController.updateChecklist);
-checklistRouter.delete("/:id", ChecklistController.deleteChecklist);
+ChecklistRouter.get("/", ChecklistController.getAllChecklists);
+ChecklistRouter.get("/:id", ChecklistController.getChecklistDetail);
+ChecklistRouter.post("/", ChecklistController.createChecklist);
+ChecklistRouter.put("/:id", ChecklistController.updateChecklist);
+ChecklistRouter.delete("/:id", ChecklistController.deleteChecklist);
 
-export { checklistRouter };
+export { ChecklistRouter };

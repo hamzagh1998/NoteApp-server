@@ -4,9 +4,9 @@
   "description": "NoteApp server side",
   "main": "server.js",
   "scripts": {
-    "start": "NODE_ENV=production node src/api/server.js",
-    "watch": "NODE_ENV=development nodemon src/api/server.js",
-    "local": "NODE_ENV=local nodemon src/api/server.js",
+    "start": "NODE_ENV=production node --experimental-json-modules src/api/server.js",
+    "watch": "NODE_ENV=development nodemon --experimental-json-modules src/api/server.js",
+    "local": "NODE_ENV=local nodemon --experimental-json-modules src/api/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Hamza Ghenimi",
@@ -15,6 +15,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "firebase-admin": "^11.1.0",
     "helmet": "^6.0.0",
     "ip": "^2.0.0",
     "jsonwebtoken": "^8.5.1",

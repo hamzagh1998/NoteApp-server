@@ -4,6 +4,7 @@ import helmet from "helmet";
 import cors from "cors";
 import morgan from "morgan";
 
+import { verifyToken } from "./middlewares/verify-token.js";
 import { checkToken } from "./middlewares/check-token.js";
 
 import { AuthRouter } from "./routers/auth/auth.router.js";
@@ -31,10 +32,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(__dirname + "/src/public"));
 
 // Routes
-app.use("/api/auth", AuthRouter);
+app.use("/api/auth", verifyToken, AuthRouter);
 app.use("/api/note", checkToken, NoteRouter);
 app.use("/api/checklist", checkToken, ChecklistRouter);
 
-app.get("/", (_, res) => res.statusCode(200).send("Hello There!"));
+app.get("/", (_, res) => res.status(200).send("Hello There!"));
+app.get("/policy", (_, res) => res.status(200).sendFile(__dirname + "/src/public/policy.html"));
 
 export { app };

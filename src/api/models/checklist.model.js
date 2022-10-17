@@ -2,10 +2,11 @@ import { Schema, model } from "mongoose";
 
 const ChecklistSchema = new Schema({
     title: {type: "string", required: true},
-    items: [String],
+    items: [Object],
     secure: {type: "boolean", default: false},
     password: {type: "string", required: false},
-    owner: {type: Schema.Types.ObjectId, ref: "User"}
+    owner: {type: Schema.Types.ObjectId, ref: "User"},
+    favorite: {type: "boolean", default: false}
   },
   { timestamps: true }
 );

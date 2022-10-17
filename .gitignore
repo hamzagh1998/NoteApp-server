@@ -1,4 +1,5 @@
 /node_modules
 /.VSCodeCounter
+service-account-key.json
 .env
 *.log

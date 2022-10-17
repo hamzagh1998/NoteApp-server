@@ -6,7 +6,8 @@ const NoteSchema = new Schema({
     content: {type: "string", required: false},
     secure: {type: "boolean", default: false},
     password: {type: "string", required: false},
-    owner: {type: Schema.Types.ObjectId, ref: "User"}
+    owner: {type: Schema.Types.ObjectId, ref: "User"},
+    favorite: {type: "boolean", default: false}
   },
   { timestamps: true }
 );

@@ -8,8 +8,6 @@ export async function checkToken(req, res, next) {
 
   const token = req.headers.authorization.split(" ")[1];
 
-  console.log(token);
-
   const [error, _] = await tryToCatch(jwt.verify, token, process.env.SECRET_KEY);
   
   if (!token || error) 

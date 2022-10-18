@@ -35,8 +35,8 @@ export class ChecklistService {
       logger.error("Error fetching checklist: " + error);
       return {error: true, code: 500, detail: "Error fetching checklist!" };
     } else if (checklist) {
-      return {error: true, code: 200, detail: checklist};
-    };return {error: false, code: 404, detail: "Checklist doesn't exists!"};
+      return {error: false, code: 200, detail: checklist};
+    };return {error: true, code: 404, detail: "Checklist doesn't exists!"};
   };
 
   static async createChecklistService(payload) {

@@ -35,8 +35,8 @@ export class NoteService {
       logger.error("Error fetching note: " + error);
       return {error: true, code: 500, detail: "Error fetching note!" };
     } else if (note) {
-      return {error: true, code: 200, detail: note};
-    };return {error: false, code: 404, detail: "Note doesn't exists!"};
+      return {error: false, code: 200, detail: note};
+    };return {error: true, code: 404, detail: "Note doesn't exists!"};
   };
 
   static async createNoteService(payload) {

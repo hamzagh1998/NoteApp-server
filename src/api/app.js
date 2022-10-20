@@ -38,5 +38,6 @@ app.use("/api/checklist", checkToken, ChecklistRouter);
 
 app.get("/", (_, res) => res.status(200).send("Hello There!"));
 app.get("/policy", (_, res) => res.status(200).sendFile(__dirname + "/src/public/policy.html"));
+app.get("/screenshots/:slug", (req, res) => res.status(200).sendFile(__dirname + "/src/public/screenshots/" + req.params.slug));
 
 export { app };

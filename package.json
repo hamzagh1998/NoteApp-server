@@ -4,7 +4,7 @@
   "description": "NoteApp server side",
   "main": "server.js",
   "scripts": {
-    "start": "NODE_ENV=production node --experimental-json-modules src/api/server.js",
+    "start": "NODE_ENV=production node --experimental-json-modules --trace-warnings src/api/server.js",
     "watch": "NODE_ENV=development nodemon --experimental-json-modules src/api/server.js",
     "local": "NODE_ENV=local nodemon --experimental-json-modules src/api/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
